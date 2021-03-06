@@ -1,0 +1,36 @@
+<!DOCTYPE xhtml >
+<xhtml xmlns="http://www.w3c.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adivinar numero</title>
+</h:head>
+
+    <center><h:body style="background-color:#AED6F1 ;">
+
+    <h:form id="guess_form" header="Adivinar numero" >
+        <h5>Número a adivinar</h5>
+        <p:outputLabel value="#{juego.getNumero()}" style="#{juego.getmuestra()}"/><br/>
+        <h5>Número de intentos realizados</h5>
+        <p:outputLabel value="#{juego.getintento()}"/><br/>
+        <h5>Últimos intentos</h5>
+        <h:dataTable value="#{juego.getPuestos()}" var="Attemps" bgcolor="#27AE60">
+            <h:column>
+                <f:facet name="header">Intento</f:facet>
+                <h:outputText value="#{Attemps}"/>
+            </h:column>
+        </h:dataTable><br/>
+        <h5>Premio actual</h5>
+        <p:outputLabel value="#{juego.getPremio()}"/><br/>
+        <h5>Estado del juego</h5>
+        <p:outputLabel value="#{juego.isEstado()}"/><br/>
+        <h5>Ingrese un número</h5>
+        <p:inputText id="numero" binding="#{input}" value="0"/><br/>
+    </h:form>
+    <p:commandButton value="Sumbit" update="guess_form" actionListener="#{juego.guess(input.value)}"/>
+    <p:commandButton value="Restart" update="guess_form" actionListener="#{juego.restart()}"/>
+    </h:body></center>
+</xhtml>
