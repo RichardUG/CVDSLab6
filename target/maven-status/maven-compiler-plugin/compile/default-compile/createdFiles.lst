@@ -1,0 +1,6 @@
+edu\eci\cvds\servlet\App.class
+edu\eci\cvds\servlet\bean\Game.class
+edu\eci\cvds\servlet\model\Todo.class
+edu\eci\cvds\servlet\OtherServlet.class
+edu\eci\cvds\servlet\SampleServlet.class
+edu\eci\cvds\servlet\Service.class
