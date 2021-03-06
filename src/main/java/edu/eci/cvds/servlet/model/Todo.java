@@ -6,9 +6,6 @@ public class Todo {
     private String title;
     private boolean completed;
 
-    public Todo() {
-
-    }
     public int getUserId() {
         return userId;
     }
