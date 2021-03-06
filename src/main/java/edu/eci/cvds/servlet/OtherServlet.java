@@ -7,13 +7,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.validation.constraints.Null;
 import java.io.IOException;
+import java.io.Writer;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.io.Writer;
+
 @WebServlet(
         urlPatterns = "/OtherServlet"
 )
@@ -28,7 +28,7 @@ public class OtherServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        todoList= new ArrayList<Todo>();;
+        todoList= new ArrayList<Todo>();
         Writer responseWriter = resp.getWriter();
         try{
             Optional<String> Id = Optional.ofNullable(req.getParameter("Id"));
