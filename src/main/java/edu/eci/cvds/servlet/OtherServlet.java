@@ -57,7 +57,7 @@ public class OtherServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        todoList= new ArrayList<Todo>();;
+        todoList= new ArrayList<Todo>();
         Writer responseWriter = resp.getWriter();
         try{
             Optional<String> Id = Optional.ofNullable(req.getParameter("Id"));
