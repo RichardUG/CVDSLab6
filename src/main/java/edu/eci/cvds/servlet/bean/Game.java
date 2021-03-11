@@ -70,21 +70,23 @@ public class Game {
         estado = true;
     }
 
-    public void guess(int num){
-
-        if (!estado) {
-            setintento();
-            setPuestos(num);
-            if (num==numero ){
-                setEstado();
-            }
-            else {
-                setPremio();
-                if (premio==0){
+    public void guess(String n){
+        try {
+            int num = Integer.valueOf(n);
+            if (!estado && num>=0) {
+                setintento();
+                setPuestos(num);
+                if (num == numero) {
                     setEstado();
+                } else {
+                    setPremio();
+                    if (premio == 0) {
+                        setEstado();
+                    }
                 }
             }
         }
+        catch (Exception e){}
     }
 
     public void restart(){
